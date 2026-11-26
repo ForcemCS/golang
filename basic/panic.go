@@ -40,3 +40,10 @@ func main28() {
 	fmt.Println("end")
 
 }
+
+// main start
+// A
+// defer 2
+// recover:  程序出错
+// defer 1
+// end

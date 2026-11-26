@@ -40,8 +40,11 @@ func main29() {
 		jobs <- i
 	}
 
+	// main 函数执行完 10 次发送操作之后，就会执行 close(jobs)
+	// 它不会等待 Worker 将任务全部处理完毕。关闭 Channel 并不意味着清空 Channel，也不意味着停止 Worker。
 	close(jobs)
 
+	// 为了不让主协程退出
 	time.Sleep(4 * time.Second)
 
 }
